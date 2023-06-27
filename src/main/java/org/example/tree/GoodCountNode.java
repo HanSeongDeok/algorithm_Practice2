@@ -8,11 +8,11 @@ public class GoodCountNode {
 
     private int goodCount(TreeNode root ,int max){
         if (root == null) {return 0;}
-        if (root.getVar() >= max) {
+        if (root.getVal() >= max) {
             count++;
         }
-        goodCount(root.getLeftNode(),Math.max(root.getVar(), max));
-        goodCount(root.getRightNode(),Math.max(root.getVar(), max));
+        goodCount(root.getLeftNode(),Math.max(root.getVal(), max));
+        goodCount(root.getRightNode(),Math.max(root.getVal(), max));
         return count;
     }
 
@@ -24,11 +24,11 @@ public class GoodCountNode {
     private int getBestCount(TreeNode root, int max){
         if (root == null) {return 0;}
 
-        if (root.getVar() >= max) {
+        if (root.getVal() >= max) {
             bestCount ++;
         }
-        getBestCount(root.getLeftNode(), Math.max(root.getVar(), max));
-        getBestCount(root.getRightNode(), Math.max(root.getVar(), max));
+        getBestCount(root.getLeftNode(), Math.max(root.getVal(), max));
+        getBestCount(root.getRightNode(), Math.max(root.getVal(), max));
         return bestCount;
     }
 

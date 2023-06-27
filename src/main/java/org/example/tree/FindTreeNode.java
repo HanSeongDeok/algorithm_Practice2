@@ -1,7 +1,5 @@
 package org.example.tree;
 
-import com.sun.source.tree.Tree;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +29,7 @@ public class FindTreeNode implements FindMethod{
             return null;
         }
         findInOrderNode(treeNode.getLeftNode());
-        list.add(treeNode.getVar());
+        list.add(treeNode.getVal());
         findInOrderNode(treeNode.getRightNode());
         return list;
     }
@@ -40,7 +38,7 @@ public class FindTreeNode implements FindMethod{
         if (treeNode == null) {
             return null;
         }
-        list.add(treeNode.getVar());
+        list.add(treeNode.getVal());
         findPreOrderNode(treeNode.getLeftNode());
         findPreOrderNode(treeNode.getRightNode());
         return list;
@@ -52,7 +50,7 @@ public class FindTreeNode implements FindMethod{
         }
         findPreOrderNode(treeNode.getLeftNode());
         findPreOrderNode(treeNode.getRightNode());
-        list.add(treeNode.getVar());
+        list.add(treeNode.getVal());
         return list;
     }
 

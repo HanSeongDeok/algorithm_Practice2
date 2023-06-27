@@ -21,10 +21,27 @@ public class ValidateBinarySearchTree {
     }
 
     public boolean solution(TreeNode treeNode){
-
-        return false;
+        return checkLeftNodeValidation (treeNode, Integer.MIN_VALUE) &&
+                checkRightNodeValidation(treeNode, Integer.MAX_VALUE);
     }
+    public boolean checkLeftNodeValidation (TreeNode root, int compareValue) {
+        if(root == null) {return true;}
 
+        if (compareValue <= root.getVal()) {
+            return false;
+        }
+        checkLeftNodeValidation(root.getLeftNode(), root.getVal());
+        return true;
+    }
+    public boolean checkRightNodeValidation (TreeNode root, int compareValue) {
+        if(root == null) {return true;}
+
+        if (compareValue >= root.getVal()) {
+            return false;
+        }
+        checkRightNodeValidation(root.getRightNode(), root.getVal());
+        return true;
+    }
 
     public static void main(String[] args) {
 

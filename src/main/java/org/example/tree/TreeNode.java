@@ -1,22 +1,22 @@
 package org.example.tree;
 
 public class TreeNode {
-    private int var;
+    private int val;
     private TreeNode leftNode;
     private TreeNode rightNode;
 
     public TreeNode() {}
     public TreeNode(int var){
-        this.var = var;
+        this.val = var;
     }
     public TreeNode(int var, TreeNode leftNode, TreeNode rightNode) {
-        this.var = var;
+        this.val = var;
         this.leftNode = leftNode;
         this.rightNode = rightNode;
     }
 
-    public int getVar() {
-        return var;
+    public int getVal() {
+        return val;
     }
 
     public TreeNode getLeftNode() {
@@ -27,8 +27,8 @@ public class TreeNode {
         return rightNode;
     }
 
-    public void setVar(int var) {
-        this.var = var;
+    public void setVal(int val) {
+        this.val = val;
     }
 
     public void setLeftNode(TreeNode leftNode) {
@@ -41,6 +41,6 @@ public class TreeNode {
 
     @Override
     public String toString(){
-        return String.valueOf(var);
+        return String.valueOf(val);
     }
 }
