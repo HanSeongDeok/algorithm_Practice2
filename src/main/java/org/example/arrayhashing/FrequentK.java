@@ -1,11 +1,27 @@
 package org.example.arrayhashing;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class FreqencyK {
+public class FrequentK {
+    final int START_INDEX = 0;
+    public int[] topKFrequent(int[] nums, int k) {
+        Map<Integer, Integer> map = new HashMap();
+        Arrays.stream(nums)
+                .filter(n -> !map.containsKey(n))
+                .forEach(n -> map.put(n, START_INDEX));
+
+        Arrays.stream(nums)
+                .forEach(n -> map.put(n, map.get(n)+1));
+
+        return map.keySet().stream()
+                .sorted((o1, o2) -> map.get(o2) - map.get(o1))
+                .limit(k).mapToInt(Integer::intValue).toArray();
+    }
+
+
 }
 
 

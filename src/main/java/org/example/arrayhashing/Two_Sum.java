@@ -27,7 +27,6 @@ public class Two_Sum {
         int[] sums = new int[2];
         Arrays.stream(nums).forEach(v -> map.put(v, index++));
 
-
         return sums;
     }
     public static void main(String[] args) {
